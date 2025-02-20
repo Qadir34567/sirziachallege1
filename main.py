@@ -67,7 +67,7 @@ if uploaded_files:
 
         # Convesion OPTION
         st.subheader("Conversion Option") 
-        conversion_type = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"],key=file.name)
+        conversion_type = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"], key=file.name)
         if st.button(f"Convert{file.name}"):
             buffer = BytesIO()
             if conversion_type == "CSV":
