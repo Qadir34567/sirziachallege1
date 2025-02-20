@@ -40,8 +40,7 @@ if uploaded_files:
         st.write(df.head()) 
 
         # Data cleanup
-        # 
-            st.subheader("Data Cleaning Option") 
+        st.subheader("Data Cleaning Option") 
         if st.checkbox ({f"Clean data for (file.name}"):
             col1, col2 = st.columns(2)
 
