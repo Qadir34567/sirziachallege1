@@ -41,7 +41,6 @@ if uploaded_files:
         st.write("Preview and head of the file")
         st.dataframe(df.head()) 
         
-
         # Data cleanup
         st.subheader("Data Cleaning Option") 
         if st.checkbox (f"Clean data for {file.name}"):
@@ -50,7 +49,7 @@ if uploaded_files:
             with col1:
                 if st.button(f"Remove duplicates from the file : {file.name}"):
                     df.drop_duplicates (inplace=True)
-                    t.write(" Duplicates removed!") If st.button(f"Fill missing values with 0"):
+                    t.write(" Duplicates removed!")
 
             with col2:
                 if st.button(f"Fill missing values for {file.name}"):
