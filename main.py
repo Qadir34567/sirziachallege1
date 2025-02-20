@@ -31,7 +31,6 @@ if uploaded_files:
             df = pd.read_csv(file)
         elif file_ext == ".xlsx":
             df = pd.read_excel(file)
-
             else:
                 st.write("Unspoted file format")
                 
