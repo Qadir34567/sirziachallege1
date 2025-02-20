@@ -89,7 +89,7 @@ if uploaded_files:
                 mime=mime_type
             )    
 
-st.success("All files are processed successfully! Thank you for using")            
+st.success("All files are processed successfully! Thank you for using the app")            
                 
 
     
