@@ -86,7 +86,7 @@ if uploaded_files:
                 data=buffer,
                 file_name=file_name,
                 mime=mime_type
-            )    
+            ) 
 
 st.success("All files are processed successfully! Thank you for using the app")            
                 
