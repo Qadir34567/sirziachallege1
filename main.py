@@ -24,7 +24,7 @@ st.write("This is a simple app to fetch data from the web.")
 
 #File Uploader
 uploaded_files = st.file_uploader("Upload a file (accepts CVS and Excel):", type=["csv", "xlsx"], accept_multiple_files=True)
- if uploaded_files:
+if uploaded_files:
     for file in uploaded_files:
         file_ext = os.path.splitext(file.name)[-1].lower()
         if file_ext == ".csv":
