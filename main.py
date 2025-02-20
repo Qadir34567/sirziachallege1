@@ -32,10 +32,8 @@ if uploaded_files:
         elif file_ext == ".xlsx":
             df = pd.read_excel(file)
         else:
-             st.write("Unsupported file format")
-
-
-
+            st.error(f"Unsupported file type: {file_ext}")
+            continue
         
         # file Detais
         st.write("Preview and head of the file")
