@@ -33,11 +33,14 @@ if uploaded_files:
             df = pd.read_excel(file)
         else:
              st.write("Unsupported file format")
-                
+
+
+
+        
         # file Detais
         st.write("Preview and head of the file")
-
-        st.write(df.head()) 
+        st.dataframe(df.head()) 
+        
 
         # Data cleanup
         st.subheader("Data Cleaning Option") 
