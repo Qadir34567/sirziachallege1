@@ -27,6 +27,7 @@ uploaded_files = st.file_uploader("Upload a file (accepts CVS and Excel):", type
 if uploaded_files:
     for file in uploaded_files:
         file_ext = os.path.splitext(file.name)[-1].lower()
+        
         if file_ext == ".csv":
             df = pd.read_csv(file)
         elif file_ext == ".xlsx":
