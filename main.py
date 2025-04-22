@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from io import BytesIO
 
-st.set_page_config(page_title="📁 File Converter & Cleaner", layout="wide")
-st.title("📁 File Converter & Cleaner")
-st.write("Upload your CSV and Excel Files to clean the data convert formats effortlessly🚀")
+st.set_page_config(page_title="File Converter & Cleaner", layout="wide")
+st.title("File Converter & Cleaner")
+st.write("Upload your CSV and Excel Files to clean the data convert formats effortlessly")
 
 files = st.file_uploader("Upload CSV or Excel Files", type=["csv", "xlsx"], accept_multiple_files=True)
 
@@ -13,7 +13,7 @@ if files:
         ext = file.name.split(".")[-1]
         df = pd.read_csv(file) if ext == "csv" else pd.read_excel(file)
 
-        st.subheader(f"🔍 {file.name} - Preview")
+        st.subheader(f"{file.name} - Preview")
         st.dataframe(df.head())
 
         if st.checkbox(f"Fill Missing Values - {file.name}"):
@@ -25,12 +25,12 @@ if files:
         df = df[selected_columns]
         st.dataframe(df.head())
 
-        if st.checkbox(f"📊 Show Chart - {file.name}") and not df.select_dtypes(include="number").empty:
+        if st.checkbox(f"Show Chart - {file.name}") and not df.select_dtypes(include="number").empty:
             st.bar_chart(df.select_dtypes(include="number").iloc[:, :2])
 
         format_choice = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"], key=f"radio_{file.name}")
 
-        if st.button(f"⬇️ Download {file.name} as {format_choice}", key=f"btn_{file.name}_{format_choice}"):
+        if st.button(f"Download {file.name} as {format_choice}", key=f"btn_{file.name}_{format_choice}"):
             output = BytesIO()
             new_name = f"{file.name.rsplit('.', 1)[0]}.{format_choice.lower()}"
 
@@ -44,7 +44,7 @@ if files:
 
             output.seek(0)
             st.download_button(
-                f"⬇️ Download {new_name}",
+                f"Download {new_name}",
                 data=output,
                 file_name=new_name,
                 mime=mime,
